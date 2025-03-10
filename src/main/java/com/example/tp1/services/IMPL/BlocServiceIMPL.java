@@ -10,7 +10,9 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class BlocServiceIMPL implements IBlocService {
+
     BlocRepository blocRepository;
+
     @Override
     public List<Bloc> retrieveBlocs() {
         return blocRepository.findAll();
@@ -35,4 +37,11 @@ public class BlocServiceIMPL implements IBlocService {
     public void removeBloc(long idBloc) {
         blocRepository.deleteById(idBloc);
     }
+
+    @Override
+    public List<Bloc> getBlockByNomUniversite(String nom) {
+        return blocRepository.findByFoyerUniversiteNomUniversiteLike(nom);
+    }
+
+
 }

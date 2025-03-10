@@ -10,4 +10,6 @@ public interface IBlocService {
     Bloc addBloc (Bloc bloc);
     Bloc retrieveBloc (long idBloc);
     void removeBloc (long idBloc);
+    List<Bloc> getBlockByNomUniversite(String nom);
+
 }
